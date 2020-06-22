@@ -1,0 +1,25 @@
+digraph flowchart {
+  layout=neato;
+
+  node [shape = rectangle]
+  A [pos="0,4!" ,label  = "Selected patients with pneumonic COPD exacerbation patients \n based on the validated algorithm (n=1672)"];
+  B [pos="0,0!",label  = "Patients in main analysis (n=1237)"];
+  
+  C [pos="-2,-2!" ,label = "Non-steroid users (n=579)"];
+  D [pos="2,-2!",label = "Steroid users (n=658)"];
+  E [pos="5,2!", label = "Excluded patients (n=435)\n- Heart failure (n=193)\l- Asthma exacerbation (n=116)\l- Pneumothorax (n=10)\l- Obstructive pneumonia (n=11)\l- Empyema (n=6)\l- Daily steroid users (n=43)\l- Tracheal intubation on the day of admission (n=17)\l- Vasopressors on the day of admission (n=9)\l- Fulfilling the clinical stability criteria on the day of admission (n=27)\l- Completely wrong diagnoses (n=3)\l"]
+
+  a [pos="0,2!",label = '', shape=invis, width=0, height=0]
+  b [pos="0,-1!",label = '', shape=invis, width=0, height=0]
+  c [pos="-2,-1!",label = '', shape=invis, width=0, height=0]
+  d [pos="2,-1!",label = '', shape=invis, width=0, height=0]
+
+  A   -> a [dir='none']
+  a -> B 
+  B   -> b [dir='none']
+  b -> c,d [dir='none']
+  c -> C 
+  d -> D 
+  a -> E
+  }
+

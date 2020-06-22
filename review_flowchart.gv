@@ -1,0 +1,37 @@
+digraph flowchart {
+  layout=neato;
+
+  node [shape = rectangle]
+  A [pos="-3,4!" ,label  = "124 records identified through database searching \l -Medline (N=66) \l -Ebmase (N=41) \l -Central (N=1) \l-ICTRP (N=16) \l"];
+  B [pos="3,4!",label  = "3 additional records identified through other sources"];
+  
+  a [pos="-3,3!",label = '', shape=invis, width=0, height=0];
+  b [pos="3,3!",label = '', shape=invis, width=0, height=0];
+  c [pos="0,3!",label = '', shape=invis, width=0, height=0];
+  
+  D [pos="0,2!" ,label = "69 recods after duplicates removed"];
+  
+  E [pos="0,1!",label = "69 full-text articles assessed for eligibility"];
+  F [pos="6,1!", label = "26 full-text articles excluded \l-Review articles (N=8) \l-Unrelated articles (N=18)\l"];
+  
+  e [pos="0,0!",label = '', shape=invis, width=0, height=0];
+  f [pos="3,0!",label = '', shape=invis, width=0, height=0];
+  g [pos="-3,0!",label = '', shape=invis, width=0, height=0];
+
+  G [pos="-3,-1!",label = '12 studies included in qualitative synthesis \n for diagnostic accuracy'];
+  H [pos="3,-1!",label = '43 studies included in review for adverse reactions \n of inhaled challenge tests'];
+  
+  I [pos="-3,-2!",label = '11 studies included in quantitative analysis (meta-analysis) \n for diagnostic accuracy'];
+
+  A -> a [dir='none']
+  B -> b [dir='none']
+  a,b -> c [dir='none']
+  c -> D
+  D -> E
+  E -> F
+  E -> e [dir='none']
+  e -> f, g [dir='none']
+  g -> G 
+  f -> H
+  G -> I
+  }
